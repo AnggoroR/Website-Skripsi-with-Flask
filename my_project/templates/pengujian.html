@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Hostit</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>IntrusionDetector</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="{{ url_for('home') }}">Beranda <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}">Metode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('home') }}">Dataset</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Pengujian
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('pengujian') }}">Pengujian Binary</a>
+                  <a class="dropdown-item" href="{{ url_for('pengujian_multi') }}">Pengujian Multiclass</a>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h1>
+                Selamat datang di halaman pengujian binary
+              </h1>
+              <p>
+                Anda bisa melakukan pengujian untuk menentukan jenis intrusion (normal dan abnormal) berdasarkan hasil prediksi dari
+                nilai-nilai yang kamu masukkan. Silahkan melakukan pengujian di bawah ini.</p>
+              <div class="btn-box">
+                <a href="#pengujian_skripsi" class="btn-1">
+                  Lakukan pengujian
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class=" col-lg-10 mx-auto">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="Illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  </div>
+
+  <!-- pengujian skripsi section -->
+  <section class="pengujian_section layout_padding" id="pengujian_skripsi">
+    <div class="container main-container">
+      <div class="heading_container heading_center pengujian_skripsi">
+        <h1>Pengujian</h1>
+      </div>
+      <div class="container content-container">
+        <div class="form-container">
+          <form method="post" action="{{ url_for('pengujian') }}">
+            <label for="src_bytes">src_bytes</label>
+            <input type="number" id="src_bytes" name="src_bytes" min="0" required step="any" value="{{ form_data['src_bytes'] if form_data else '' }}">
+
+            <label for="dst_bytes">dst_bytes</label>
+            <input type="number" id="dst_bytes" name="dst_bytes" min="0" required step="any" value="{{ form_data['dst_bytes'] if form_data else '' }}">
+
+            <label for="duration">duration</label>
+            <input type="number" id="duration" name="duration" min="0" required step="any" value="{{ form_data['duration'] if form_data else '' }}">
+
+            <label for="dst_host_srv_count">dst_host_srv_count</label>
+            <input type="number" id="dst_host_srv_count" name="dst_host_srv_count" min="0" required step="any" value="{{ form_data['dst_host_srv_count'] if form_data else '' }}">
+
+            <label for="count">count</label>
+            <input type="number" id="count" name="count" min="0" required step="any" value="{{ form_data['count'] if form_data else '' }}">
+
+            <label for="dst_host_count">dst_host_count</label>
+            <input type="number" id="dst_host_count" name="dst_host_count" min="0" required step="any" value="{{ form_data['dst_host_count'] if form_data else '' }}">
+
+            <label for="dst_host_srv_serror_rate">dst_host_srv_serror_rate</label>
+            <input type="number" id="dst_host_srv_serror_rate" name="dst_host_srv_serror_rate" min="0" required
+              step="any" value="{{ form_data['dst_host_srv_serror_rate'] if form_data else '' }}">
+
+            <label for="srv_serror_rate">srv_serror_rate</label>
+            <input type="number" id="srv_serror_rate" name="srv_serror_rate" min="0" required step="any" value="{{ form_data['srv_serror_rate'] if form_data else '' }}">
+
+            <label for="serror_rate">serror_rate</label>
+            <input type="number" id="serror_rate" name="serror_rate" min="0" required step="any" value="{{ form_data['serror_rate'] if form_data else '' }}">
+
+            <label for="dst_host_serror_rate">dst_host_serror_rate</label>
+            <input type="number" id="dst_host_serror_rate" name="dst_host_serror_rate" min="0" required step="any" value="{{ form_data['dst_host_serror_rate'] if form_data else '' }}">
+
+            <label for="logged_in">logged_in</label>
+            <input type="number" id="logged_in" name="logged_in" min="0" required step="any" value="{{ form_data['logged_in'] if form_data else '' }}">
+
+            <label for="num_root">num_root</label>
+            <input type="number" id="num_root" name="num_root" min="0" required step="any" value="{{ form_data['num_root'] if form_data else '' }}">
+
+            <label for="num_compromised">num_compromised</label>
+            <input type="number" id="num_compromised" name="num_compromised" min="0" required step="any" value="{{ form_data['num_compromised'] if form_data else '' }}">
+
+            <label for="dst_host_same_srv_rate">dst_host_same_srv_rate</label>
+            <input type="number" id="dst_host_same_srv_rate" name="dst_host_same_srv_rate" min="0" required step="any" value="{{ form_data['dst_host_same_srv_rate'] if form_data else '' }}">
+
+            <label for="same_srv_rate">same_srv_rate</label>
+            <input type="number" id="same_srv_rate" name="same_srv_rate" min="0" required step="any" value="{{ form_data['same_srv_rate'] if form_data else '' }}">
+
+            <label for="srv_rerror_rate">srv_rerror_rate</label>
+            <input type="number" id="srv_rerror_rate" name="srv_rerror_rate" min="0" required step="any" value="{{ form_data['srv_rerror_rate'] if form_data else '' }}">
+
+            <label for="rerror_rate">rerror_rate</label>
+            <input type="number" id="rerror_rate" name="rerror_rate" min="0" required step="any" value="{{ form_data['rerror_rate'] if form_data else '' }}">
+
+            <label for="dst_host_srv_rerror_rate">dst_host_srv_rerror_rate</label>
+            <input type="number" id="dst_host_srv_rerror_rate" name="dst_host_srv_rerror_rate" min="0" required
+              step="any" value="{{ form_data['dst_host_srv_rerror_rate'] if form_data else '' }}">
+
+            <label for="dst_host_rerror_rate">dst_host_rerror_rate</label>
+            <input type="number" id="dst_host_rerror_rate" name="dst_host_rerror_rate" min="0" required step="any" value="{{ form_data['dst_host_rerror_rate'] if form_data else '' }}">
+
+            <label for="dst_host_diff_srv_rate">dst_host_diff_srv_rate</label>
+            <input type="number" id="dst_host_diff_srv_rate" name="dst_host_diff_srv_rate" min="0" required step="any" value="{{ form_data['dst_host_diff_srv_rate'] if form_data else '' }}">
+
+            <button class="prediksi_button btn btn-success" type="submit">Prediksi</button>
+          </form>
+        </div>
+        <div class="result-container">
+          <h2>Hasil Prediksi</h2>
+          {% if prediction %}
+          <p class="berhasil">{{ prediction }}</p>
+          {% else %}
+          <p class="gagal">Belum ada prediksi apapun.</p>
+          {% endif %}
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>Dibuat oleh Anggoro Rizki Aprillianto | &copy; 2024, IntrusionDetector</p>
+    </div>
+  </footer>
+
+  <!-- jQery -->
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <!-- bootstrap js -->
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <!-- custom js -->
+  <!-- <script src="{{ url_for('static', filename='js/custom.js') }}"></script> -->
+
+</body>
+
+</html>

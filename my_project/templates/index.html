@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>IntrusionDetector</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>IntrusionDetector</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class=""> </span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav  ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="#">Beranda <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#tentang">Tentang</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#metode">Metode</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#dataset">Dataset</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                  aria-haspopup="true" aria-expanded="false">
+                  Pengujian
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="{{ url_for('pengujian') }}">Pengujian Binary</a>
+                  <a class="dropdown-item" href="{{ url_for('pengujian_multi') }}">Pengujian Multiclass</a>
+                </div>
+              </li>
+              <!-- <li class="nav-item">
+                <a class="nav-link" href="{{ url_for('pengujian') }}">Pengujian</a>
+              </li> -->
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class="slider_section">
+      <div class="container ">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="detail-box">
+              <h1>
+                Selamat datang di IntrusionDetector
+              </h1>
+              <p>
+                Saya Anggoro Rizki Aprillianto mahasiswa Universitas Negeri Semarang program studi Teknik Informatika
+                yang sedang melakukan penelitian mengenai Intrusion Detection System (IDS) </p>
+              <div class="btn-box">
+                <a href="#judul_skripsi" class="btn-1">
+                  Baca lebih lanjut
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="row">
+              <div class=" col-lg-10 mx-auto">
+                <div class="img-box">
+                  <img src="{{ url_for('static', filename='images/slider-img.png') }}" alt="Illustration">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+  </section>
+  </div>
+
+  <!-- judul skripsi section -->
+  <section class="service_section layout_padding" id="judul_skripsi">
+    <div class="container">
+      <div class="heading_container heading_center judul_skripsi">
+        <h2>Judul Skripsi</h2>
+      </div>
+      <div class="one">
+        <div class="skripsi_img">
+          <img src="{{ url_for('static', filename='images/server-img.png') }}" alt="Illustration">
+        </div>
+        <div class="skripsi_description">
+          <p>OPTIMASI NETWORK INTRUSION DETECTION SYSTEM MENGGUNAKAN RANDOM FOREST CLASSIFIER DAN FEATURE SELECTION
+            CHI-SQUARE</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- about section -->
+  <section class="about_section layout_padding-bottom layout_padding-top" id="tentang">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>Tentang</h2>
+            </div>
+            <p>
+              Intrusion Detection System (IDS) adalah perangkat lunak atau alat yang mendeteksi serangan dari internet
+              dan intranet dengan memantau dan mencatat lalu lintas jaringan serta menerapkan algoritma deteksi. Pada
+              tahun 2013, Indonesia mengalami sekitar 1.277.578 serangan siber, setara dengan 42 ribu serangan per hari,
+              menjadikannya negara yang sering menjadi sasaran serangan siber, diikuti oleh Amerika Serikat (332 ribu)
+              dan Cina (151 ribu), menurut APJII. Pada tahun 2021, Badan Siber dan Sandi Negara (BSSN) mencatat
+              1.637.973.022 anomali di Indonesia, dengan jumlah tertinggi pada Desember, mencapai 242.006.168 anomali.
+            </p>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/about-img.png') }}" alt="Illustration">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+  <!-- metode section -->
+  <section class="metode_section" id="metode">
+    <div class="container">
+      <h2 class="text-center my-4">Metode</h2>
+      <div class="row row-1">
+          <div class="col-md-6">
+              <div class="card card-1">
+                  <img src="{{ url_for('static', filename='images/random-forest.jpg') }}" class="card-img-top" alt="Random Forest">
+                  <div class="card-body">
+                      <h5 class="card-title">Random Forest</h5>
+                      <p class="card-text">Random forest adalah sebuah kumpulan classifier yang digunakan untuk tugas klasifikasi atau regresi. Ini merupakan salah satu varian ensemble bagging yang diusulkan oleh Breiman. Dalam beberapa kasus, random forest memiliki kinerja yang lebih baik dibandingkan dengan metode boosting dan lebih cepat daripada bagging dan boosting.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card card-2">
+                  <img src="{{ url_for('static', filename='images/Chi-square-illustration.jpg') }}" class="card-img-top" alt="Chi-Square">
+                  <div class="card-body">
+                      <h5 class="card-title">Chi-Square</h5>
+                      <p class="card-text">Chi-Square adalah uji statistik yang digunakan untuk menentukan apakah terdapat hubungan yang signifikan antara dua variabel kategorikal. Ini sering digunakan dalam analisis data untuk menguji hipotesis statistik.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row row-2">
+          <div class="col-md-6">
+              <div class="card card-3">
+                  <img src="{{ url_for('static', filename='images/One-hot-encoding.png') }}" class="card-img-top" alt="One-Hot Encoding">
+                  <div class="card-body">
+                      <h5 class="card-title">One-Hot Encoding</h5>
+                      <p class="card-text">One-hot encoding adalah teknik representasi data kategorikal sebagai vektor biner, di mana setiap kategori direpresentasikan sebagai vektor yang semuanya 0 kecuali satu elemen yang 1, menunjukkan kehadiran kategori tertentu. Pendekatan ini menghasilkan data berdimensi tinggi, yang dapat meningkatkan kompleksitas waktu untuk prediksi, namun efektif dalam mempertahankan informasi prediktif saat mengubah fitur kategorikal menjadi fitur numerik yang dapat diolah oleh algoritma pembelajaran mesin.</p>
+                  </div>
+              </div>
+          </div>
+          <div class="col-md-6">
+              <div class="card card-4">
+                  <img src="{{ url_for('static', filename='images/Data-Standardization.png') }}" class="card-img-top" alt="Data Standardization">
+                  <div class="card-body">
+                      <h5 class="card-title">Data Standardization</h5>
+                      <p class="card-text">Data Standardization adalah proses transformasi data sehingga memiliki rata-rata 0 dan standar deviasi 1. Ini adalah langkah penting dalam praproses data untuk banyak algoritma machine learning yang sensitif terhadap skala fitur.</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+  </section>
+  <!-- metode section -->
+
+  
+  <section class="dataset_section" id="dataset">
+    <div class="container">
+      <div class="title_dataset">
+        <h2>Dataset</h2>
+      </div>
+      <div class="dataset-container">
+        {{ table|safe }}
+      </div>
+    </div>
+  </section>
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>Dibuat oleh Anggoro Rizki Aprillianto | &copy; 2024, IntrusionDetector</p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+  <!-- bootstrap js -->
+  <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+  <!-- custom js -->
+  <!-- <script src="{{ url_for('static', filename='js/custom.js') }}"></script> -->
+
+</body>
+
+</html>
